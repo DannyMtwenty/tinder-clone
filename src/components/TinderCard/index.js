@@ -1,52 +1,41 @@
-import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet,ImageBackground, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, ImageBackground, Text, View } from "react-native";
 
 export default function Card(props) {
-
-    const{name,bio,image}=props.user;
+  const { name, bio, image } = props.user;
   return (
-
-      <View style={styles.card}>
+    <View style={styles.card}>
       <ImageBackground
         source={{
           uri: image,
         }}
         style={styles.image}>
-
-<View style={styles.cardInner}>
-       
+        <View style={styles.cardInner}>
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.bio}>{bio}</Text>
-          </View>
-       
+        </View>
       </ImageBackground>
-
-     
-      </View>
-   
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-
-  image :{
-    width: '100%',
-    height: '100%',
+  image: {
+    width: "100%",
+    height: "100%",
     borderRadius: 15,
-    
-    overflow: 'hidden',
 
-    justifyContent: 'flex-end',
-    
+    overflow: "hidden",
+
+    justifyContent: "flex-end",
   },
-  card :{
-    width: '95%',
-    height: '70%',
+  card: {
+    width: "95%",
+    height: "70%",
     borderRadius: 15,
-    backgroundColor: '#fefefe',
+    backgroundColor: "#fefefe",
 
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 5,
@@ -55,17 +44,16 @@ const styles = StyleSheet.create({
     shadowRadius: 6.68,
 
     elevation: 11,
-
   },
-  name :{
+  name: {
     fontSize: 30,
-    color: 'white',
-    fontWeight: 'bold', 
+    color: "white",
+    fontWeight: "bold",
   },
-  bio :{
+  bio: {
     fontSize: 18,
-    color: 'white',
-    lineHeight: 25,   
+    color: "white",
+    lineHeight: 25,
   },
   cardInner: {
     padding: 10,

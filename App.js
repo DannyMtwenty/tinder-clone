@@ -19,7 +19,10 @@ export default function App() {
 
   const sharedValue = useSharedValue(1);
   const cardStyle = useAnimatedStyle(() => ({
-    opacity: sharedValue.value,
+    transform: [{
+      translateX: sharedValue.value * 500-200,
+
+    }],
   }));
 
   return (
@@ -28,7 +31,7 @@ export default function App() {
         <Card user={users[2]} />
       </Animated.View>
     
-    <Pressable onPress={() => sharedValue.value = Math.random()} style={{marginBottom : 60}}>
+    <Pressable onPress={() => sharedValue.value = withSpring(Math.random())} style={{marginBottom : 60}}>
        <Text>Change me</Text>
       </Pressable>
     </View>
